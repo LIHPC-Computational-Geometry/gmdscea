@@ -40,7 +40,7 @@ jobs:
           source /spack/share/spack/setup-env.sh 
           spack env activate meshing-env
           spack load cmake
-          spack install gmdscea@main
+          spack install --add gmdscea@main
 
       - name: Test c++ lib install
         shell: bash

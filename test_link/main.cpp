@@ -4,7 +4,7 @@
 /*----------------------------------------------------------------------------*/
 using namespace gmds;
 int main() {
-        MeshModel mod = DIM2|N|F|F2N
+        MeshModel mod = DIM2|N|F|F2N;
         IGMesh mesh(mod);
         mesh.newNode(0,0);
         mesh.newNode(0,1);

@@ -44,7 +44,7 @@ jobs:
           spack install --no-checksum
           spack load --only dependencies --sh gmdscea > spack_env_file.sh
           source spack_env_file.sh
-          cmake .
+          cmake -DCMAKE_INSTALL_PREFIX=${{env.INSTALL_DIR}} .
           make
           make install
 

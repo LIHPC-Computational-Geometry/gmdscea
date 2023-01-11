@@ -41,8 +41,7 @@ jobs:
           spack env activate meshing-env
           spack load cmake
           spack add gmdscea
-          spack concretize
-          spack develop -p . --no-clone gmdscea
+          spack develop -p . --no-clone gmdscea@2.0.0
           spack install --no-checksum
           spack load --only dependencies --sh gmdscea > spack_env_file.sh
           source spack_env_file.sh

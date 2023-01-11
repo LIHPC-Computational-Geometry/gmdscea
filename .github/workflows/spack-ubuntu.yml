@@ -41,7 +41,7 @@ jobs:
           spack env activate meshing-env
           spack load cmake
           spack add gmdscea
-          spack develop --no-checksum
+          spack install --no-checksum dev_path=.
 
       - name: Test c++ lib install
         shell: bash

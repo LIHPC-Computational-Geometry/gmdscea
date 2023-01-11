@@ -40,6 +40,7 @@ jobs:
           source /spack/share/spack/setup-env.sh 
           spack env activate meshing-env
           spack load cmake
+          spack add gmdscea
           spack load --only dependencies --sh gmdscea > spack_env_file.sh
           source spack_env_file.sh
           cmake .

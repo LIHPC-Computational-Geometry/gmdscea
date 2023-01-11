@@ -30,7 +30,7 @@ GMDSCEAWriter::~GMDSCEAWriter()
 void
 GMDSCEAWriter::setLengthUnit(double AUnit)
 {
-	lenghtUnit_ = AUnit
+	lenghtUnit_ = AUnit;
 }
 /*----------------------------------------------------------------------------*/
 void

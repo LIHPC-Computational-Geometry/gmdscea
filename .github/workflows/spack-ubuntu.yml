@@ -40,8 +40,17 @@ jobs:
           source /spack/share/spack/setup-env.sh 
           spack env activate meshing-env
           spack load cmake
-          spack dev-build -d . --no-checksum gmdscea@0.0.0
-          spack install
+          spack add gmdscea
+	  # we use GITHUB_WORKSPACE instead of github.Workspace because in containers it
+	  # seems to be incorrect (see https://github.com/actions/runner/issues/2058)
+          spack develop -p $GITHUB_WORKSPACE --no-clone gmdscea@2.0.0
+          spack install --no-checksum
+	  # now we build using cmake with spack provided build variables
+          spack load --only dependencies --sh gmdscea > spack_env_file.sh
+          source spack_env_file.sh
+          cmake -DCMAKE_INSTALL_PREFIX=${{env.INSTALL_DIR}} .
+          make -j
+          # make test
 
       - name: Test c++ lib install
         shell: bash
@@ -49,7 +58,7 @@ jobs:
           source /spack/share/spack/setup-env.sh
           spack env activate meshing-env
           spack load cmake
-          spack load gmdscea@0.0.0
+          spack load gmdscea
           cd test_link/
           cmake -S . -B build_exe
           cmake --build build_exe

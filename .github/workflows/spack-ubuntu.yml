@@ -14,7 +14,7 @@ jobs:
     # well on Linux, Windows or Mac.
     runs-on: ubuntu-latest
     container:
-      image: aberzen/mgx-ubuntu.20.04-spack.0.19.0:1.2.0
+      image: lihpccg/mgx-ubuntu.20.04-spack.0.19.0:latest
     strategy:
       fail-fast: false
       matrix:
@@ -39,7 +39,6 @@ jobs:
         run: |
           source /spack/share/spack/setup-env.sh 
           spack env activate meshing-env
-          spack load cmake
           spack add gmdscea
           # we use GITHUB_WORKSPACE instead of github.Workspace because in containers it
           # seems to be incorrect (see https://github.com/actions/runner/issues/2058)
@@ -57,7 +56,6 @@ jobs:
         run: |
           source /spack/share/spack/setup-env.sh
           spack env activate meshing-env
-          spack load cmake
           spack load gmdscea
           cd test_link/
           cmake -S . -B build_exe

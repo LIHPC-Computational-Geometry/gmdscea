@@ -7,4 +7,8 @@ set_and_check(GMDSCEA_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
 
 check_required_components(gmdscea)
 
+include(CMakeFindDependencyMacro)
+find_dependency(Lima)
+find_dependency(gmds)
+
 include("${CMAKE_CURRENT_LIST_DIR}/../gmdscea.cmake")

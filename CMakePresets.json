@@ -4,7 +4,7 @@
       {
         "name": "ci",
         "cacheVariables": {
-           "CMAKE_INSTALL_PREFIX": "$env{INSTALL_DIR}/gmds072;$env{INSTALL_DIR}/lima"
+          "CMAKE_PREFIX_PATH": "$env{INSTALL_DIR}/gmds072;$env{INSTALL_DIR}/lima"
         }
       }
     ]

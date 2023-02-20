@@ -5,7 +5,8 @@
         "name": "ci",
         "cacheVariables": {
           "CMAKE_POSITION_INDEPENDENT_CODE": "ON",
-          "CMAKE_PREFIX_PATH": "$env{INSTALL_DIR}/gmds072;$env{INSTALL_DIR}/lima"
+          "Gmds_Root": "$env{INSTALL_DIR}/gmds072",
+          "Lima_Root": "$env{INSTALL_DIR}/lima"
         }
       }
     ]

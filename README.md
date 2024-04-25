@@ -1,4 +1,4 @@
-# gmdscea
+# gmdscea (deprecated)
 
 ![spack-ci](https://github.com/LIHPC-Computational-Geometry/gmdscea/actions/workflows/spack-ci.yml/badge.svg)
 
